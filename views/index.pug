@@ -1,11 +1,23 @@
 extends layout
 
 block content
-  header.header
-    nav.nav
-      ul
-        li Inicio
-        li Ventas
-        li Compras
-        li Productos
+    .container
+        header.header
+            .header__search
+                input(type="text" placeholder="Buscar").search
+            .header__avatar
+                .avatar
+        nav.nav
+            .header__nav
+            ul.menu
+                li.menu__item Inicio
+                li.menu__item Ventas
+                li.menu__item Compras
+                li.menu__item Productos
+        main.content-main
+
+
+
+
+
 
