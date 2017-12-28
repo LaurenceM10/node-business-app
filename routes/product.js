@@ -6,8 +6,14 @@ const router = express.Router();
  */
 
 /* GET product page. */
-router.get('/product', function (req, res, next) {
+router.get('/product', (req, res, next) => {
     res.render('product', {title: 'Productos'});
+});
+
+
+/* To update a product */
+router.put('/product/:id', (req, res, next) => {
+
 });
 
 

@@ -12,6 +12,18 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+body::-webkit-scrollbar {
+    background: #eeeeee;
+    width: .7em;
+    border: 1px solid #dddddd;
+    padding: .5em;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #03A9F4;
+    border-radius: 2em;
+}
+
 /* To create a grid context in this element */
 .container {
     display: grid;
@@ -30,41 +42,47 @@ body {
     /* To create a flex context in the header */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+
+
+    /* To make a fix header */
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 .header__search,
 .header__avatar {
     height: 90%;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .header__search {
-    width: 50%;
+    width: 80%;
+    justify-content: flex-start;
+    padding: 0 1em;
+}
+
+.header__avatar {
+    width: 20%;
+    justify-content: center;
 }
 
 .search {
-    width: 100%;
+    width: 70%;
     height: 60%;
     outline: none;
     border: 1px solid #dddddd;
-    border-radius: 2px;
+    border-radius: .2em;
     padding: .4em;
+    margin: .5em;
 }
 
 .search:focus {
     border-color: #03A9F4;
 }
 
-.header__avatar {
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .avatar {
     width: 3em;
@@ -80,19 +98,35 @@ body {
     grid-row: 1 / span 2;
     background: #ffffff;
     box-shadow: 1px 0px 5px #efefef;
+
+
+    /* To /* To make a fix navigation  */
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 .header__nav {
     width: 100%;
-    height: 10%;
+    height: 10vh;
     z-index: 1;
     border-bottom: 1px solid #f5f5f5;
+
+    /* To make a fix navigation  */
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 .menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    /*  To make a fix menu  */
+    position: sticky;
+    top: 10vh;
+    left: 0;
 }
 
 .menu__item {
@@ -105,6 +139,7 @@ body {
     border-bottom: 1px solid #f5f5f5;
     color: #03A9F4;
     cursor: pointer;
+    background: #ffffff;
 }
 
 .menu__item:hover {

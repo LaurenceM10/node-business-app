@@ -1,0 +1,106 @@
+/* The main section always has padding*/
+.content-main {
+    padding: 1em;
+}
+
+/* Product options styles */
+.product-options {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-section, .actions-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categorie-options {
+    border: none;
+    color: #03A9F4;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(200, 200, 200, .5);
+}
+
+.categorie-options, .button {
+    border-radius: .3em;
+    margin: .5em;
+    padding: .4em .8em;
+    cursor: pointer;
+    outline: none;
+    font-size: .85em;
+}
+
+.button {
+    box-shadow: 1px 1px 5px rgba(3, 169, 244, .5);
+}
+
+.button:hover {
+    box-shadow: 1px 1px 2px rgba(3, 169, 244, .5);
+}
+
+.button--categories {
+    background: #ffffff;
+    color: #03A9F4;
+    padding: .4em 2em;
+}
+
+.button--add-product,
+.button--select-all,
+.button--delete-product {
+    color: #fff;
+}
+
+.button--add-product,
+.button--select-all {
+    background: #03A9F4;
+}
+
+.button--delete-product {
+    background: red;
+    opacity: .7;
+    box-shadow: 1px 1px 7px rgba(255, 0, 0, .5);
+}
+
+.button--delete-product:hover {
+    box-shadow: 1px 1px 2px rgba(255, 0, 0, .5);
+}
+
+
+/* Product Section */
+
+/* This section work with flexbox */
+.product {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product__card {
+    width: 22%;
+    height: 15em;
+    background: #fff;
+    box-shadow: 1px 1px 7px #dddddd;
+    border-radius: 3px;
+    margin: .4em .3em;
+    border: 1px solid #dddddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

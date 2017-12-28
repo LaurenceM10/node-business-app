@@ -1,19 +1,35 @@
-extends layout
+extends index
 
-block content
-    .container
-        header.header
-            .header__search
-                input(type="text" placeholder="Buscar").search
-            .header__avatar
-                .avatar
-        nav.nav
-            .header__nav
-            ul.menu
-                li.menu__item Inicio
-                li.menu__item Ventas
-                li.menu__item Compras
-                li.menu__item Productos
-        main.content-main
-        .product-options
-            .button
+
+block item
+    .product-options
+        .order-section
+            //Make this with a display menu transition
+            select.categorie-options
+                option(value = 1) Categoría
+                option(value = 2) Categoría
+                option(value = 3) Categoría
+        .actions-section
+            .button.button--add-product  Agregar
+            .button.button--select-all Seleccionar todo
+            .button.button--delete-product Eliminar
+    .product
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+        .product__card
+
+
+
