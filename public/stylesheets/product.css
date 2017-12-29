@@ -41,6 +41,10 @@
     box-shadow: 1px 1px 2px rgba(3, 169, 244, .5);
 }
 
+.button:active {
+    padding: .37em .77em;;
+}
+
 .button--categories {
     background: #ffffff;
     color: #03A9F4;
@@ -68,25 +72,102 @@
     box-shadow: 1px 1px 2px rgba(255, 0, 0, .5);
 }
 
-
 /* Product Section */
 
 /* This section work with flexbox */
 .product {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.product__card {
+.product-card {
     width: 22%;
     height: 15em;
     background: #fff;
-    box-shadow: 1px 1px 7px #dddddd;
+    box-shadow: 1px 1px 7px #bbbbbb;
+    margin: .4em 1em;
     border-radius: 3px;
-    margin: .4em .3em;
-    border: 1px solid #dddddd;
+
+    /* To create a flex context*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.product-card-header {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card__image {
+    width: 6em;
+    height: 6em;
+    border-radius: 60%;
+    border: 1px solid #dddddd;
+    background: linear-gradient(#03A9F4, #00E676);
+    background-size: cover;
+    background-position: center;
+    z-index: 5;
+    position: relative;
+}
+
+.product-card__image::before {
+    display: block;
+    content: "";
+    width: 5.6em;
+    height: 5.6em;
+    background: url("https://cdn.shopify.com/s/files/1/1244/2858/products/frijoles_rojos_de_seda1.jpg?v=1498109755");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    top: .15em;
+    left: .10em;
+}
+
+.product-card-body {
+    width: 95%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555555;
+    border-bottom: 1px solid rgba(3, 169, 244, .2);
+}
+
+.product-card-footer {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 .5em;
+    margin-top: .5em;
+}
+
+.product-card__units,
+.product-card__price {
+    font-size: .9em;
+    border-radius: .2em;
+    padding: .2em .5em;
+}
+
+.product-card__units {
+    color: orangered;
+    background: rgba(255, 69, 0, .1);
+}
+
+.product-card__price {
+    color: #03A9F4;
+    background: rgba(3, 169, 244, .1);
+}
+
 
 
 
