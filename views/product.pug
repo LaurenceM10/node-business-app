@@ -14,56 +14,14 @@ block item
             .button.button--select-all#select-all Seleccionar todo
             .button.button--delete-product#delete-product Eliminar
     .product
-        .product-card
-            .product-card-header
-                .product-card__image
-            .product-card-body
-                .product-card__name Frijoles Rojos
-            .product-card-footer
-                .product-card__units 15 unidades
-                .product-card__price C$25
-        .product-card
-            .product-card-header
-                .product-card__image
-            .product-card-body
-                .product-card__name Frijoles Rojos
-            .product-card-footer
-                .product-card__units 15 unidades
-                .product-card__price C$25
-        .product-card
-            .product-card-header
-                .product-card__image
-            .product-card-body
-                .product-card__name Frijoles Rojos
-            .product-card-footer
-                .product-card__units 15 unidades
-                .product-card__price C$25
-        .product-card
-            .product-card-header
-                .product-card__image
-            .product-card-body
-                .product-card__name Frijoles Rojos
-            .product-card-footer
-                .product-card__units 15 unidades
-                .product-card__price C$25
-        .product-card
-            .product-card-header
-                .product-card__image
-            .product-card-body
-                .product-card__name Frijoles Rojos
-            .product-card-footer
-                .product-card__units 15 unidades
-                .product-card__price C$25
-        .product-card
-            .product-card-header
-                .product-card__image
-            .product-card-body
-                .product-card__name Frijoles Rojos
-            .product-card-footer
-                .product-card__units 15 unidades
-                .product-card__price C$25
-
-
-
-
-
+        .product-container
+            each product in data
+                .product-card
+                    .product-card-header
+                        .product-card__border
+                            .product-card__image
+                    .product-card-body
+                        .product-card__name #{product.name}
+                    .product-card-footer
+                        .product-card__units #{product.units} unidades
+                        .product-card__price C$#{product.price}

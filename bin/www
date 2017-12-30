@@ -7,6 +7,9 @@ const app = require('../app');
 const debug = require('debug')('myworktime:server');
 const http = require('http');
 
+//Require mongoose to create the database connection
+const mongoose = require('mongoose');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -22,9 +25,16 @@ const server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+
+mongoose.connect("mongodb://localhost:27017/Disamyr", (error, res) => {
+    if (error){
+        return res.send(500, {message : 'Error'});
+    } else {
+        server.listen(port);
+        server.on('error', onError);
+        server.on('listening', onListening);
+    }
+});
 
 /**
  * Normalize a port into a number, string, or false.

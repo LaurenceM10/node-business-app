@@ -1,3 +1,9 @@
+/******************************************************
+*                   DESKTOP FIRST                     *
+******************************************************/
+
+
+
 /* To reset browser styles */
 *,
 *::before,
@@ -36,7 +42,8 @@ body::-webkit-scrollbar-thumb {
     grid-column: 2 / span 2;
     grid-row: 1 / span 1;
     background: #ffffff;
-    box-shadow: 1px 1px 5px #dddddd;
+    box-shadow: 1px 1px 5px #cccccc;
+    padding-left: 1em;
 
     /* To create a flex context in the header */
     display: flex;
@@ -51,12 +58,19 @@ body::-webkit-scrollbar-thumb {
     z-index: 5;
 }
 
+.header__icon-menu {
+    display: none;
+}
+
+
 .header__search,
 .header__avatar {
     height: 90%;
     display: flex;
     align-items: center;
 }
+
+
 
 .header__search {
     width: 80%;
@@ -97,22 +111,26 @@ body::-webkit-scrollbar-thumb {
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
     background: #ffffff;
-    box-shadow: 1px 1px 5px #dddddd;
+    box-shadow: 1px 1px 5px #cccccc;
 
-
-    /* To /* To make a fix navigation  */
+    /* To make a fix navigation  */
     position: sticky;
     top: 0;
     left: 0;
 
+    /* To be above the other elements */
     z-index: 5;
+
+    /* To show a transition when the menu is opened o closed */
+    transition: all .5s;
 }
 
 .header__nav {
     width: 100%;
-    height: 10vh;
+    height: 25vh;
     z-index: 1;
     border-bottom: 1px solid #f5f5f5;
+    background: linear-gradient(#03A9F4, #0288D1);
 
     /* To make a fix navigation  */
     position: sticky;
@@ -148,6 +166,83 @@ body::-webkit-scrollbar-thumb {
     background: #f9f9f9;
 }
 
-/* Main section styles */
+
+/* The main section always has padding*/
+.content-main {
+    padding: 1em;
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 2;
+}
 
 
+
+/* Media queries min-width: 320px  FIXME: this could be best */
+@media (max-width: 840px) {
+    .header__icon-menu {
+        width: 15%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .icon-bars {
+        color: #03A9F4;
+    }
+
+    .header__search {
+        width: 65%;
+    }
+
+    .header__avatar {
+        width: 20%;
+    }
+
+    .avatar {
+        width: 1.9em;
+        height: 1.9em;
+    }
+
+    .search {
+        height: 55%;
+        width: 100%;
+        margin: 0;
+    }
+
+    .header {
+        grid-column: 1 / span 2;
+    }
+
+    .nav {
+        display: none;
+        width: 0;
+    }
+
+    .content-main {
+        grid-column: 1 / span 2;
+        padding: 0;
+    }
+
+    /*--------------------------------------*/
+    /*       When the menu is opened        */
+    /*--------------------------------------*/
+
+
+    /* Add this styles to the menu */
+    .open-menu {
+        display: block;
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+        width: 75%;
+        height: 100vh;
+        z-index: 10;
+        box-shadow: 1px 1px 30px #bbbbbb;
+    }
+}
+
+/* FIXME: this could be best  */
+@media (min-width: 840px) and (max-width: 1260px) {
+    .container {
+        grid-template-columns: 25% 75%;
+    }
+}

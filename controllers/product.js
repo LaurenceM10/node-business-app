@@ -3,19 +3,42 @@ const Product = require('../models/product');
 
 
 /**
- * Operations of products
+ * API Rest of products
  * */
 
 
-//To get all products of the database
-let getProducts = (request, response) => {
-    Product.find({}, (error, data) => {
+/* To add and save a new product */
+// let addProduct = (req, res) => {
+//     //Create a new product with the data of the request parameters
+//     let product = new Product(req.body);
+//
+//     Product.save(product, (error, data) => {
+//        if (error) {
+//            return res.status(500).send({message : `Error to save the product`});
+//        } else {
+//            return res.status(200).send({data});
+//        }
+//     });
+// };
+
+
+/* To get all products of the database */
+let getProducts = (req, res) => {
+    Product.find({}, (error, products) => {
         if (error) {
-            response.status(500).send({message: `Cannot found products`});
-        } else if (!data) {
-            response.status(404).send({message: `There are not products`});
+            return res.status(500).send({message: 'An error has occurred'});
+        } else if (!products) {
+            return res.status(500).send({message: "There are not products"});
         } else {
-            response.status(200).send({data});
+            res.render('product',
+                {
+                    title: 'Productos',
+                    data: products
+                });
         }
     });
+};
+
+module.exports = {
+    getProducts
 };

@@ -6,8 +6,8 @@ let productSchema = new Schema({
     name: String,
     description: String,
     price: Number,
-    units: Number,
-    picture: Buffer
+    units: Number
+    // TODO: add pictures to the product. Find a way to make this with mongodb and mongoose -- picture: Buffer
 });
 
 
@@ -17,4 +17,4 @@ let productSchema = new Schema({
  *
  * Then, we export the model
  */
-module.exports = mongoose.model('Product', productSchema);
+module.exports = mongoose.model('product', productSchema);

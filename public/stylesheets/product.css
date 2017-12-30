@@ -1,20 +1,25 @@
-/* The main section always has padding*/
-.content-main {
-    padding: 1em;
-}
 
 /* Product options styles */
 .product-options {
     width: 100%;
     height: 10vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .order-section, .actions-section {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.order-section {
+    padding-left: 1.5em;
+}
+
+.actions-section {
+    padding-right: 2em;
 }
 
 .categorie-options {
@@ -77,12 +82,18 @@
 /* This section work with flexbox */
 .product {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.product-container {
+    display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    width: 98%;
 }
 
 .product-card {
-    width: 22%;
+    width: 30%;
     height: 15em;
     background: #fff;
     box-shadow: 1px 1px 7px #bbbbbb;
@@ -104,31 +115,25 @@
     align-items: center;
 }
 
-.product-card__image {
-    width: 6em;
-    height: 6em;
-    border-radius: 60%;
-    border: 1px solid #dddddd;
+.product-card__border {
+    width: 5.7em;
+    height: 5.7em;
     background: linear-gradient(#03A9F4, #00E676);
     background-size: cover;
     background-position: center;
-    z-index: 5;
-    position: relative;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.product-card__image::before {
-    display: block;
-    content: "";
-    width: 5.6em;
-    height: 5.6em;
+.product-card__image {
+    width: 5.4em;
+    height: 5.4em;
+    border-radius: 50%;
     background: url("https://cdn.shopify.com/s/files/1/1244/2858/products/frijoles_rojos_de_seda1.jpg?v=1498109755");
     background-size: cover;
     background-position: center;
-    border-radius: 50%;
-    z-index: -1;
-    position: absolute;
-    top: .15em;
-    left: .10em;
 }
 
 .product-card-body {
@@ -160,12 +165,46 @@
 
 .product-card__units {
     color: orangered;
-    background: rgba(255, 69, 0, .1);
+    background: rgba(255, 20, 0, .1);
 }
 
 .product-card__price {
     color: #03A9F4;
     background: rgba(3, 169, 244, .1);
+}
+
+@media (max-width: 640px) {
+    .product-container {
+        justify-content: center;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .button--select-all {
+        display: none;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 840px) {
+    .product-card {
+        width: 43%;
+    }
+
+    .product-container {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 840px) and (max-width: 1280px) {
+    .product-container {
+        justify-content: space-between;
+    }
+
+    .product-card {
+        width: 42%;
+    }
 }
 
 

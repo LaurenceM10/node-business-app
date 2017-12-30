@@ -3,18 +3,20 @@ extends layout
 block content
     .container
         header.header
-            .header__search
+            .header__icon-menu
+                .icon-bars#icon-menu
+            .header__search#header__search
                 input(type="text" placeholder="Buscar").search
-            .header__avatar
-                .avatar
-        nav.nav
+            .header__avatar.close-menu
+                .avatar.close-menu
+        nav.nav#nav
             .header__nav
             ul.menu
                 li.menu__item Inicio
                 li.menu__item Ventas
                 li.menu__item Compras
                 li.menu__item Productos
-        main.content-main
+        main.content-main#content-main
             block item
 
 
