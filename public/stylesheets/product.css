@@ -118,8 +118,8 @@
 }
 
 .product-card__border {
-    width: 5.7em;
-    height: 5.7em;
+    width: 6em;
+    height: 6em;
     background: linear-gradient(#03A9F4, #00E676);
     background-size: cover;
     background-position: center;
@@ -130,8 +130,8 @@
 }
 
 .product-card__image {
-    width: 5.4em;
-    height: 5.4em;
+    width: 5.7em;
+    height: 5.7em;
     border-radius: 50%;
     background: url("https://cdn.shopify.com/s/files/1/1244/2858/products/frijoles_rojos_de_seda1.jpg?v=1498109755");
     background-size: cover;
@@ -175,7 +175,7 @@
     background: rgba(3, 169, 244, .1);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 540px) {
 
     .product-container {
         justify-content: center;
@@ -190,7 +190,7 @@
     }
 }
 
-@media (min-width: 640px) and (max-width: 840px) {
+@media (min-width: 540px) and (max-width: 840px) {
     .product-card {
         width: 43%;
     }

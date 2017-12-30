@@ -1,12 +1,15 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/layout.css')
-    link(rel='stylesheet', href='/stylesheets/product.css')
-    link(href='https://file.myfontastic.com/6dCtYsU2yryXWWdmzhnLWZ/icons.css', rel='stylesheet')
-    link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-  body
-    block content
-    script(src='/javascripts/index.js')
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/layout.css')
+        if title.toString() == 'Productos'
+            link(rel='stylesheet', href='/stylesheets/product.css')
+        if title.toString() == 'Agregar Productos'
+            link(rel='stylesheet', href='/stylesheets/product.css')
+        link(href='https://file.myfontastic.com/6dCtYsU2yryXWWdmzhnLWZ/icons.css', rel='stylesheet')
+        link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+    body
+        block content
+        script(src='/javascripts/index.js')

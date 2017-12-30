@@ -14,5 +14,9 @@ router.get('/product', (req, res) => {
     product.getProducts(req, res);
 });
 
+router.get('product/add', (req, res) => {
+
+});
+
 module.exports = router;
 
