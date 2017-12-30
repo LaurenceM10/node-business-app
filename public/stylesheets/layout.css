@@ -75,12 +75,13 @@ body::-webkit-scrollbar-thumb {
 .header__search {
     width: 80%;
     justify-content: flex-start;
-    padding: 0 1em;
+    padding: 0 1.5em;
 }
 
 .header__avatar {
     width: 20%;
     justify-content: center;
+    padding-left: 3.5em;
 }
 
 .search {
@@ -145,7 +146,7 @@ body::-webkit-scrollbar-thumb {
 
     /*  To make a fix menu  */
     position: sticky;
-    top: 10vh;
+    top: 25vh;
     left: 0;
 }
 
@@ -160,6 +161,10 @@ body::-webkit-scrollbar-thumb {
     color: #03A9F4;
     cursor: pointer;
     background: #ffffff;
+}
+
+.menu__item::before {
+    margin-right: .7em;
 }
 
 .menu__item:hover {
@@ -196,6 +201,7 @@ body::-webkit-scrollbar-thumb {
 
     .header__avatar {
         width: 20%;
+        padding: 0;
     }
 
     .avatar {
@@ -236,7 +242,7 @@ body::-webkit-scrollbar-thumb {
         width: 75%;
         height: 100vh;
         z-index: 10;
-        box-shadow: 1px 1px 30px #bbbbbb;
+        box-shadow: 1px 1px 30px #777777;
     }
 }
 
