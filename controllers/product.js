@@ -40,6 +40,13 @@ let getProducts = (req, res) => {
     });
 };
 
+
+
+/* To delete a product by id */
+let deleteProduct = (req, res) => {
+    
+};
+
 module.exports = {
     getProducts,
     addProduct

@@ -20,6 +20,16 @@ block content
                 li.menu__item.icon-list-bullet Productos
         main.content-main#content-main
             block main
+            if title.toString() == 'Productos'
+                .dialog#dialog
+                    .dialog__delete#delete-dialog
+                        .dialog-group
+                            p.message ¿Estás seguro que deseas eliminar este producto?
+                        .dialog-group
+                            .dialog-options
+                                span.dialog-link.dialog-link--cancel#dialog-link--cancel Cancelar
+                                a.dialog-link.dialog-link--delete#dialog-link--delete(href='/product') Eliminar
+                    .dialog__edit#edit-dialog
 
 
 
