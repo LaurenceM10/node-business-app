@@ -17,7 +17,7 @@ let addProduct = (req, res) => {
             return res.status(500).send({message: `Error to save the product`});
         }
 
-        //When the product is saved, redirect to the page of products
+        //When the product is saved, redirect the user to the products page
         res.redirect('/product');
     });
 };
@@ -44,10 +44,21 @@ let getProducts = (req, res) => {
 
 /* To delete a product by id */
 let deleteProduct = (req, res) => {
-    
+    //Get the id of the request
+    let id = req.params.id;
+
+    Product.findByIdAndRemove(id, (error, product) => {
+       if (error) {
+           return res.send({message : 'Error removing the product'})
+       }
+
+       //When the product is removed, redirect the user to the products page
+       res.redirect('/product');
+    });
 };
 
 module.exports = {
     getProducts,
-    addProduct
+    addProduct,
+    deleteProduct
 };

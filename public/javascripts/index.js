@@ -42,10 +42,11 @@ document.querySelector('body').addEventListener('click', (event) => {
 
 //Close the dialog when the cancel button is clicked or when any part outside the dialog is clicked
 document.querySelector('body').addEventListener('click', (event) => {
-    if (event.target.id.toLowerCase() === 'dialog-link--cancel' || event.target.className.toLowerCase() === 'dialog') {
+    if (event.target.id.toLowerCase() === 'dialog-link--cancel' || event.target.id.toLowerCase() === 'dialog') {
         dialog.classList.remove('dialog--visible');
     }
 });
+
 
 
 

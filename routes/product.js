@@ -22,7 +22,7 @@ router.post('/product/add/add', (req, res) => {
    Product.addProduct(req, res);
 });
 
-router.delete('product/delete', (req, res) => {
+router.delete('product/delete/:id', (req, res) => {
    Product.deleteProduct(req, res);
 });
 
