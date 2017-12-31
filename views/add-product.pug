@@ -1,1 +1,18 @@
-extends layout
+extends index
+
+block main
+    form.form(method='POST' action='/product/add/add')
+        .form__group
+            input.input(type='text' placeholder='Nombre' name='name' required)
+        .form__group
+            input.input(type='number' placeholder='Cantidad' name='units' required)
+            input.input(type='number' step='any' placeholder='Precio' name='price' required)
+        .form__group
+            select.select(required)
+                option(value='' disabled hidden selected) Unidad de medida
+                option(value='pounds') Libras
+                option(value='liters') Litros
+                option(value='packaging') Envases
+                option(value='units') Unidades
+        .form__group
+            input.input.input--submit(type='submit' value='Agregar')

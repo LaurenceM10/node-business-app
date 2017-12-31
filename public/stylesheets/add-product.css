@@ -1,0 +1,94 @@
+/******************************************************
+*                   MOBILE FIRST                      *
+******************************************************/
+
+@media (min-width: 280px) {
+    .form {
+        width: 93.5%;
+        height: 70%;
+        margin: auto;
+        background: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
+
+        /* To create a flex context */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form__group {
+        width: 90%;
+        height: 33%;
+
+        /* To create a flex context */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input, .select {
+        width: 100%;
+        outline: none;
+        border-radius: 2px;
+        border: 1px solid #cccccc;
+        padding: .5em .3em;
+        color: #333333;
+        transition: all .425s;
+    }
+
+    .input:hover, .select:hover {
+        border-color: #aaaaaa;
+    }
+
+    .input::placeholder, .select  {
+        color: #aaaaaa;
+        cursor: pointer;
+    }
+
+    .select:first-child {
+        color: #333333;
+    }
+
+    .select:active {
+        color: #333333;
+    }
+
+    .input:focus, .select:focus {
+        border-color: #03A9F4;
+        cursor: auto;
+    }
+
+    .input--submit {
+        background: #03A9F4;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        width: 45%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 620px) {
+    .form {
+        width: 85%;
+    }
+}
+
+@media (min-width: 840px) {
+    .form {
+        width: 65%;
+    }
+
+    .form__group {
+        height: 20%;
+        justify-content: space-between;
+    }
+
+    .form__group:nth-child(2) .input {
+        width: 48%;
+    }
+}
+

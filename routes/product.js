@@ -14,8 +14,13 @@ router.get('/product', (req, res) => {
     product.getProducts(req, res);
 });
 
-router.get('product/add', (req, res) => {
+router.get('/product/add', (req, res) => {
+    res.render('add-product', {title: 'Agregar Productos'});
+});
 
+
+router.post('/product/add/add', (req, res) => {
+   product.addProduct(req, res);
 });
 
 module.exports = router;

@@ -1,7 +1,7 @@
 extends index
 
 
-block item
+block main
     .product-options
         .order-section
             //Make this with a display menu transition
@@ -10,7 +10,8 @@ block item
                 option(value = 2) Categoría
                 option(value = 3) Categoría
         .actions-section
-            .button.button--add-product#add-product  Agregar
+            .button.button--add-product#add-product
+                a.button__link(href='/product/add') Agregar
             .button.button--select-all#select-all Seleccionar todo
             .button.button--delete-product#delete-product Eliminar
     .product
@@ -18,6 +19,9 @@ block item
             each product in data
                 .product-card
                     .product-card-header
+                        .product-card__options
+                            .icon-edit
+                            .icon-trash
                         .product-card__border
                             .product-card__image
                     .product-card-body

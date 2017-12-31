@@ -69,6 +69,12 @@
     background: #03A9F4;
 }
 
+.button__link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
 .button--delete-product {
     background: red;
     opacity: .7;
@@ -84,7 +90,22 @@
 /* This section work with flexbox */
 .product {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+}
+
+.product-card__options {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 .4em;
+}
+
+.icon-edit, .icon-trash {
+    color: rgba(3, 169, 244, .7);
+    margin-left: .3em;
+    cursor: pointer;
 }
 
 .product-container {
@@ -113,7 +134,8 @@
     width: 100%;
     height: 50%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 

@@ -7,7 +7,11 @@ let productSchema = new Schema({
     description: String,
     price: Number,
     units: Number
-    // TODO: add pictures to the product. Find a way to make this with mongodb and mongoose -- picture: Buffer
+    /**
+     * TODO: add pictures to the product. Find a way to make this -
+     * TODO: - with mongodb and mongoose -- picture: Buffer
+     */
+
 });
 
 

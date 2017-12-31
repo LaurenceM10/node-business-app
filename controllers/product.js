@@ -10,14 +10,15 @@ const Product = require('../models/product');
 /* To add and save a new product */
 let addProduct = (req, res) => {
     //Create a new product with the data of the request parameters
-    let product = new Product(req.body);
+    let product = new Product({name: req.body.name, description: '', price: req.body.price, units: req.body.units});
 
-    Product.save(product, (error, data) => {
+    product.save((error, data) => {
         if (error) {
             return res.status(500).send({message: `Error to save the product`});
         }
 
-        return res.status(200).send({data});
+        //When the product is saved, redirect to the page of products
+        res.redirect('/product');
     });
 };
 

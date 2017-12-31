@@ -2,8 +2,6 @@
 *                   DESKTOP FIRST                     *
 ******************************************************/
 
-
-
 /* To reset browser styles */
 *,
 *::before,
@@ -25,7 +23,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #03A9F4;
+    background: rgba(3, 169, 244, .8);
     border-radius: 2em;
 }
 
@@ -62,15 +60,12 @@ body::-webkit-scrollbar-thumb {
     display: none;
 }
 
-
 .header__search,
 .header__avatar {
     height: 90%;
     display: flex;
     align-items: center;
 }
-
-
 
 .header__search {
     width: 80%;
@@ -98,7 +93,6 @@ body::-webkit-scrollbar-thumb {
     border-color: #03A9F4;
 }
 
-
 .avatar {
     width: 3em;
     height: 3em;
@@ -112,7 +106,7 @@ body::-webkit-scrollbar-thumb {
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
     background: #ffffff;
-    box-shadow: 1px 1px 5px #cccccc;
+    box-shadow: 1px 1px 5px #999999;
 
     /* To make a fix navigation  */
     position: sticky;
@@ -137,6 +131,25 @@ body::-webkit-scrollbar-thumb {
     position: sticky;
     top: 0;
     left: 0;
+
+    /* To create a flex context*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav__avatar {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    background: #eeeeee;
+}
+
+.nav__username {
+    color: #ffffff;
+    font-size: .95em;
 }
 
 .menu {
@@ -171,15 +184,17 @@ body::-webkit-scrollbar-thumb {
     background: #f9f9f9;
 }
 
-
 /* The main section always has padding*/
 .content-main {
     padding: 1em;
     grid-column: 2 / span 2;
     grid-row: 2 / span 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-
 
 /* Media queries min-width: 320px  FIXME: this could be best */
 @media (max-width: 840px) {
@@ -190,9 +205,10 @@ body::-webkit-scrollbar-thumb {
         justify-content: center;
         align-items: center;
     }
-    
+
     .icon-bars {
         color: #03A9F4;
+        cursor: pointer;
     }
 
     .header__search {
@@ -232,8 +248,6 @@ body::-webkit-scrollbar-thumb {
     /*--------------------------------------*/
     /*       When the menu is opened        */
     /*--------------------------------------*/
-
-
     /* Add this styles to the menu */
     .open-menu {
         display: block;
@@ -242,7 +256,7 @@ body::-webkit-scrollbar-thumb {
         width: 75%;
         height: 100vh;
         z-index: 10;
-        box-shadow: 1px 1px 30px #777777;
+        box-shadow: 1px 1px 30px #bbbbbb;
     }
 }
 
