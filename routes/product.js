@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //Require the product controller
-const Product = require('../controllers/product');
+const product = require('../controllers/product');
 
 
 /**
@@ -11,7 +11,7 @@ const Product = require('../controllers/product');
 
 /* GET product page. */
 router.get('/product', (req, res) => {
-    Product.getProducts(req, res);
+    product.getProducts(req, res);
 });
 
 router.get('/product/add', (req, res) => {
@@ -19,11 +19,11 @@ router.get('/product/add', (req, res) => {
 });
 
 router.post('/product/add/add', (req, res) => {
-   Product.addProduct(req, res);
+   product.addProduct(req, res);
 });
 
-router.delete('product/delete/:id', (req, res) => {
-   Product.deleteProduct(req, res);
+router.get('/product/delete/:id', (req, res) => {
+    product.deleteProduct(req, res);
 });
 
 module.exports = router;

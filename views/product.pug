@@ -21,7 +21,7 @@ block main
                     .product-card-header
                         .product-card__options
                             .icon-edit
-                            .icon-trash
+                            a.icon-trash(href='/product/delete/' + product._id)
                         .product-card__border
                             .product-card__image
                     .product-card-body

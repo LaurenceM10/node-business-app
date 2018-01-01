@@ -41,19 +41,20 @@ let getProducts = (req, res) => {
 };
 
 
-
 /* To delete a product by id */
 let deleteProduct = (req, res) => {
     //Get the id of the request
     let id = req.params.id;
+    console.log(`Este es el id #{id}`);
 
     Product.findByIdAndRemove(id, (error, product) => {
-       if (error) {
-           return res.send({message : 'Error removing the product'})
-       }
+        if (error) {
+            return res.send({message: 'Error removing the product'})
+        } else if (!product) {
+            return res.send({message: 'Error removing the product'})
+        }
 
-       //When the product is removed, redirect the user to the products page
-       res.redirect('/product');
+        res.redirect('/product');
     });
 };
 
