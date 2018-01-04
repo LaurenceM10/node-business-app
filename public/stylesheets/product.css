@@ -74,7 +74,6 @@
     text-decoration: none;
 }
 
-
 .button--delete-product {
     background: red;
     opacity: .7;
@@ -92,6 +91,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .product-card__options {
@@ -103,9 +104,15 @@
 }
 
 .icon-edit, .icon-trash {
+    display: none;
     color: rgba(3, 169, 244, .7);
     margin-left: .3em;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.product-card:hover .icon-edit, .product-card:hover .icon-trash {
+    display: inline-block;
 }
 
 .product-container {
@@ -197,43 +204,6 @@
     background: rgba(3, 169, 244, .1);
 }
 
-@media (max-width: 540px) {
-
-    .product-container {
-        justify-content: center;
-    }
-
-    .product-card {
-        width: 100%;
-    }
-
-    .button--select-all {
-        display: none;
-    }
-}
-
-@media (min-width: 540px) and (max-width: 840px) {
-    .product-card {
-        width: 43%;
-    }
-
-    .product-container {
-        justify-content: space-between;
-    }
-}
-
-@media (min-width: 840px) and (max-width: 1280px) {
-    .product-container {
-        justify-content: space-between;
-    }
-
-    .product-card {
-        width: 42%;
-    }
-}
-
-
-
 /**
 * Styles for dialog
 */
@@ -274,7 +244,6 @@
     color: #777777;
 }
 
-
 .dialog__delete .dialog-group:first-child {
     width: 100%;
     height: 70%;
@@ -298,6 +267,7 @@
     border: 1px solid transparent;
     transition: all .25s;
 }
+
 .dialog-link--delete {
     color: #ff0000;
     background: rgba(255, 0, 0, .07);
@@ -315,6 +285,62 @@
 .dialog-link--cancel:hover {
     border: 1px solid rgba(3, 169, 244, .2);
 }
+
+@media (max-width: 540px) {
+
+    .product-container {
+        justify-content: center;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .button--select-all {
+        display: none;
+    }
+
+    .dialog__delete {
+        width: 80%;
+        height: 25vh;
+        left: 10%;
+    }
+}
+
+@media (min-width: 540px) and (max-width: 840px) {
+    .product-card {
+        width: 43%;
+    }
+
+    .product-container {
+        justify-content: space-between;
+    }
+
+    .dialog__delete {
+        width: 70%;
+        height: 25vh;
+        left: 15%;
+    }
+}
+
+@media (min-width: 840px) and (max-width: 1280px) {
+    .product-container {
+        justify-content: space-between;
+    }
+
+    .product-card {
+        width: 42%;
+    }
+
+    .dialog__delete {
+        width: 50%;
+        height: 25vh;
+        left: 25%;
+    }
+}
+
+
+
 
 
 
