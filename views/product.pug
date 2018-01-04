@@ -20,7 +20,7 @@ block main
                 .product-card
                     .product-card-header
                         .product-card__options
-                            .icon-edit
+                            a.icon-edit(href='/product/edit/' + product.id)
                             a.icon-trash(href='/product/delete/' + product.id)
                         .product-card__border
                             .product-card__image
@@ -30,4 +30,5 @@ block main
                         .product-card__units #{product.units} unidades
                         .product-card__price C$#{product.price}
     include includes/delete-dialog
+    include includes/edit-dialog
 

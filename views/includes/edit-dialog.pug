@@ -1,7 +1,20 @@
-.dialog__edit#edit-dialog
+.dialog#dialog
+    .dialog__edit#edit-dialog
         .dialog-group
-            p.message ¿Estás seguro que deseas eliminar este producto?
+            form.form(method='POST' action='/product/add/add')
+                .form__group
+                    input.input(type='text' placeholder='Nombre' name='name' required)
+                .form__group
+                    input.input(type='number' placeholder='Cantidad' name='units' required)
+                    input.input(type='number' step='any' placeholder='Precio' name='price' required)
+                .form__group
+                    select.select(required)
+                        option(value='' disabled hidden selected) Unidad de medida
+                        option(value='pounds') Libras
+                        option(value='liters') Litros
+                        option(value='packaging') Envases
+                        option(value='units') Unidades
         .dialog-group
             .dialog-options
                 span.dialog-link.dialog-link--cancel#dialog-link--cancel Cancelar
-                a.dialog-link.dialog-link--delete#dialog-link--edit Eliminar
+                a.dialog-link.dialog-link--edit#dialog-link--edit Guardar Cambios

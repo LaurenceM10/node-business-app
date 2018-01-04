@@ -41,16 +41,30 @@ let getProducts = (req, res) => {
 };
 
 
+/* To update a product by id */
+let updateProduct = (req, res) => {
+    //Get the id of the request
+    let id = req.params.id;
+    //Get data from the request
+    let productUpdate = req.body;
+
+    Product.findByIdAndUpdate(id, productUpdate,(error, product) => {
+        if (error || !product){
+            return res.send({message : 'Error updating the product'});
+        }
+
+        res.redirect('/product');
+    });
+};
+
+
 /* To delete a product by id */
 let deleteProduct = (req, res) => {
     //Get the id of the request
     let id = req.params.id;
-    console.log(`Este es el id #{id}`);
 
     Product.findByIdAndRemove(id, (error, product) => {
-        if (error) {
-            return res.send({message: 'Error removing the product'})
-        } else if (!product) {
+        if (error || !product) {
             return res.send({message: 'Error removing the product'})
         }
 
@@ -58,8 +72,10 @@ let deleteProduct = (req, res) => {
     });
 };
 
+
 module.exports = {
-    getProducts,
     addProduct,
+    getProducts,
+    updateProduct,
     deleteProduct
 };
