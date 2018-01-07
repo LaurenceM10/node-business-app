@@ -291,7 +291,7 @@
     transition: all .25s;
 }
 
-.dialog-link--delete, .dialog-link--edit {
+.dialog-link--delete {
     color: #ff0000;
     background: rgba(255, 0, 0, .07);
 }

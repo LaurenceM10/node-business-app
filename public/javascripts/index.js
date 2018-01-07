@@ -9,7 +9,8 @@ let iconMenu = document.querySelector('#icon-menu'),
     deleteDialog = document.querySelector('#delete-dialog'),
     editDialog = document.querySelector('#edit-dialog'),
     deleteDialogButton = document.querySelector('#dialog-link--delete'),
-    editDialogButton = document.querySelector('#dialog-link--edit');
+    editDialogButton = document.querySelector('#dialog-link--edit'),
+    editForm = document.querySelector('#form-edit');
 
 /**
  * Added click a listener to the icon menu and add or delete
@@ -33,13 +34,13 @@ contentMain.addEventListener('click', (event) => {
  * Show the dialog when a button/icon is clicked.
  * Shoot the event when any item with the same class was clicked.
  * */
-let showDialog = () => {
+let showProductDialog = () => {
     for (let i = 0; i < deleteIcon.length; i++) {
         deleteIcon[i].addEventListener('click', (event) => {
             //Prevent the default action of the 'a' element
             event.preventDefault();
 
-            //Show the dialog
+            //Show the class element dialog with index 0 (delete product dialog)
             dialog[0].classList.toggle('dialog--visible');
 
             //Pass the route with id of the element clicked
@@ -54,7 +55,7 @@ let showDialog = () => {
             //Prevent the default action of the 'a' element
             event.preventDefault();
 
-            //Show the dialog
+            //Show the class element dialog with index 1 (edit product dialog)
             dialog[1].classList.toggle('dialog--visible');
 
             //Pass the route with id of the element clicked
@@ -66,7 +67,7 @@ let showDialog = () => {
 };
 
 //Call the method
-showDialog();
+showProductDialog();
 
 /**
  * Close the dialog when the cancel button is clicked or when any part outside the dialog is clicked
@@ -81,6 +82,8 @@ let closeDialog = (position) => {
         }
     });
 };
+
+
 
 
 /*
@@ -101,8 +104,34 @@ let passDeleteLink = (link) => {
 *  A way to pass the route with the link of the specific product
 *  to the dialogue, is to obtain that route from the link of the
 *  edit icon by clicking it and pass it dynamically to the
-*  'delete' link in the dialog
+*  'action' attribute in form of the edit dialog
 * */
 let passEditLink = (link) => {
-    editDialogButton.setAttribute('href', link);
+    editForm.setAttribute('action', link);
 };
+
+
+/**
+ * Submit the form when the Save Changes button (editDialogButton) is clicked
+ */
+editDialogButton.addEventListener('click', (event) => {
+    editForm.submit();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

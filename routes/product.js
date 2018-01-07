@@ -30,9 +30,12 @@ router.get('/product/delete/:id', (req, res) => {
 });
 
 //Route to eliminate a product
-router.put('product/edit/:id', (req, res) => {
+router.post('/product/edit/:id', (req, res) => {
    product.updateProduct(req, res);
 });
 
 module.exports = router;
+
+
+
 
