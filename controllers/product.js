@@ -1,5 +1,6 @@
-//Require the Product model
+//Require the moduls
 const Product = require('../models/product');
+const helpers = require('../helpers/index');
 
 
 /**
@@ -9,17 +10,25 @@ const Product = require('../models/product');
 
 /* To add and save a new product */
 let addProduct = (req, res) => {
-    //Create a new product with the data of the request parameters
-    let product = new Product({name: req.body.name, description: '', price: req.body.price, units: req.body.units});
+    //To validate the data from the form
+    if (!helpers.validateProductForm(req)) {
+        //Create a new product with the data of the request parameters
+        let product = new Product({name: req.body.name, description: '', price: req.body.price, units: req.body.units});
 
-    product.save((error, data) => {
-        if (error) {
-            return res.status(500).send({message: `Error to save the product`});
-        }
+        product.save((error, data) => {
+            if (error) {
+                return res.status(500).send({message: `Error to save the product`});
+            }
 
-        //When the product is saved, redirect the user to the products page
-        res.redirect('/product');
-    });
+            //When the product is saved, redirect the user to the products page
+            res.redirect('/product');
+        });
+    } else {
+        res.render('product', {
+            title: 'Productos',
+            errorMessage: 'Debes completar todos los campos'
+        })
+    }
 };
 
 
@@ -31,6 +40,7 @@ let getProducts = (req, res) => {
         } else if (!products) {
             res.status(500).send({message: "There are not products"});
         } else {
+            //Redirect the user to the products page
             res.render('product',
                 {
                     title: 'Productos',
@@ -53,6 +63,7 @@ let updateProduct = (req, res) => {
             return res.send({message : 'Error updating the product'});
         }
 
+        //Redirect the user to the products page
         res.redirect('/product');
     });
 };
@@ -68,6 +79,7 @@ let deleteProduct = (req, res) => {
             return res.send({message: 'Error removing the product'})
         }
 
+        //Redirect the user to the products page
         res.redirect('/product');
     });
 };
@@ -79,3 +91,6 @@ module.exports = {
     updateProduct,
     deleteProduct
 };
+
+
+
