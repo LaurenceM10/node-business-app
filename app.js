@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const product = require('./routes/product');
+const purchase = require('./routes/purchase');
 
 //Instance Express
 const app = express();
@@ -33,6 +34,7 @@ app.use(cookieParser());
 app.use('/', index);
 app.use('/users', users);
 app.use('/', product);
+app.use('/', purchase);
 
 
 // catch 404 and forward to error handler

@@ -7,7 +7,7 @@ const Purchase = require('../models/purchase');
 
 let addPurchase = (req, res) => {
     //Get data from the request
-    let purchase = new Purchase(req.body);
+    let purchase = new Purchase({name: req.body.productName, price: req.body.price, units: req.body.units, provider: req.body.provider, date: Date.now()});
 
     //Save the product
     purchase.save((error, data) => {
@@ -50,13 +50,18 @@ let getPurchase = (req, res) => {
  */
 let getPurchases = (req, res) => {
     //Find all
-    Purchase.find({}, (error, purchase) => {
-        if (error || !purchase) {
+    Purchase.find({}, (error, purchases) => {
+        if (error || !purchases) {
             res.send({message: 'Error to get the purchase'});
         }
 
+        console.log("---------------------" + purchases.length);
+
         //Redirect to the purchases page
-        res.redirect('/');
+        res.render('purchase', {
+            title: 'Compras',
+            data: purchases
+        });
     });
 };
 
