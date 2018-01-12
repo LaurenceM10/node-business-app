@@ -6,8 +6,7 @@ let purchaseSchema = new Schema({
     productName: String,
     price: Number,
     units: Number,
-    provider: String,
-    // date: Date
+    provider: String
 });
 
 

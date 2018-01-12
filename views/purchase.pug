@@ -1,5 +1,18 @@
 extends index
 
 block main
-    ul.menu
-        li.menu__item
+        each purchase in data
+            header.purchase-header
+                .order-section
+                .actions-section
+            .purchase-body
+                .purchase-row
+                    .product-name
+                        span.text #{purchase.productName} Nombre
+                    .product-price
+                        span.text C$#{purchase.price}
+                    .product-units
+                        span.text #{purchase.price} Unidades
+                    .product-provider
+                        span.text #{purchase.price}
+
