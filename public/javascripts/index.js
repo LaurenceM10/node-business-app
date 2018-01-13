@@ -10,7 +10,8 @@ let iconMenu = document.querySelector('#icon-menu'),
     editDialog = document.querySelector('#edit-dialog'),
     deleteDialogButton = document.querySelector('#dialog-link--delete'),
     editDialogButton = document.querySelector('#dialog-link--edit'),
-    editForm = document.querySelector('#form-edit');
+    editForm = document.querySelector('#form-edit'),
+    orderPurchase = document.querySelectorAll('.order-purchase');
 
 /**
  * Added click a listener to the icon menu and add or delete
@@ -84,8 +85,6 @@ let closeDialog = (position) => {
 };
 
 
-
-
 /*
 *  Pass the link to delete for the dialog
 *
@@ -119,11 +118,25 @@ editDialogButton.addEventListener('click', (event) => {
 });
 
 
+/*
+* Icon order clicked function.
+*
+* Add a class to the element when a button/icon order is clicked
+*
+* */
+let orderPurchaseClicked = () => {
+    console.log("----- Debug -----");
+    for(let i = 0; i < orderPurchase.length; i++){
+        orderPurchase[i].addEventListener('click', (event) => {
+            if (!event.target.classList[3].toLowerCase() === 'list-order-clicked') {
+                orderPurchase[i].classList.toggle('list-order-clicked');
+            }
+        });
+    }
+};
 
 
-
-
-
+orderPurchaseClicked();
 
 
 
