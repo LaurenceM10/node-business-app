@@ -1,0 +1,21 @@
+.dialog#dialog
+    .dialog__add-purchase#add-purchase-dialog
+        .dialog-group
+            form.form#form-add-purchase(method='POST' action='/purchase/add')
+                .form__group
+                    input.input(type='text' placeholder='Nombre del producto' name='productName' required)
+                .form__group
+                    input.input(type='number' placeholder='Cantidad' name='units' required)
+                    input.input(type='number' step='any' placeholder='Precio' name='price' required)
+                    input.input(type='number' step='any' placeholder='Provider' name='provider' required)
+                .form__group
+                    select.select(required)
+                        option(value='' disabled hidden selected) Unidad de medida
+                        option(value='pounds') Libras
+                        option(value='liters') Litros
+                        option(value='packaging') Envases
+                        option(value='units') Unidades
+        .dialog-group
+            .dialog-options
+                span.dialog-link.dialog-link--cancel#dialog-link--cancel Cancelar
+                a.dialog-link.dialog-link--save-changes#dialog-link--edit Agregar elemento

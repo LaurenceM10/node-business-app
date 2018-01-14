@@ -6,6 +6,7 @@ block main
             span.icon-list.order-purchase.list-order-clicked
             span.icon-grid-list.order-purchase
         .actions-section
+            .button.button--add-purchase#add-purchase Agregar
     .main-body
         each purchase in data
             .purchase-row
@@ -20,6 +21,9 @@ block main
                 .purchase.product-options
                     span.icon-edit
                     span.icon-trash
+    include includes/delete-dialog
+    include includes/edit-dialog
+    include includes/add-purchase-dialog
 
 
 

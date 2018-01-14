@@ -4,17 +4,21 @@
     display: flex;
 }
 
+.order-section, .actions-section {
+    display: flex;
+    align-items: center;
+}
+
 .order-section {
     width: 20%;
     height: 100%;
-    display: flex;
     justify-content: flex-start;
-    align-items: center;
 }
 
 .actions-section {
     width: 80%;
     height: 100%;
+    justify-content: flex-end;
 }
 
 .main-body {
@@ -22,5 +26,18 @@
 }
 
 
+/* Button styles */
+.button {
+    border-radius: .3em;
+    margin: .5em;
+    padding: .4em .8em;
+    cursor: pointer;
+    outline: none;
+    font-size: .85em;
+}
 
+.button__link {
+    color: #ffffff;
+    text-decoration: none;
+}
 

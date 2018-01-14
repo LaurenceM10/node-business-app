@@ -11,7 +11,9 @@ let iconMenu = document.querySelector('#icon-menu'),
     deleteDialogButton = document.querySelector('#dialog-link--delete'),
     editDialogButton = document.querySelector('#dialog-link--edit'),
     editForm = document.querySelector('#form-edit'),
-    orderPurchase = document.querySelectorAll('.order-purchase');
+    orderPurchase = document.querySelectorAll('.order-purchase'),
+    addPurchase = document.querySelector("#add-purchase"),
+    addPurchaseForm = document.querySelector('#add-purchase-dialog');
 
 /**
  * Added click a listener to the icon menu and add or delete
@@ -65,6 +67,14 @@ let showProductDialog = () => {
             closeDialog(1);
         });
     }
+
+
+    addPurchase.addEventListener('click', () => {
+        event.preventDefault();
+        dialog[2].classList.toggle('dialog--visible');
+
+        closeDialog(2);
+    });
 };
 
 //Call the method
@@ -137,6 +147,14 @@ let orderPurchaseClicked = () => {
 
 
 orderPurchaseClicked();
+
+
+/**
+ * To submit the form when the add purchase button is clicked
+ */
+addPurchase.addEventListener('click', (event) => {
+    addPurchaseForm.submit();
+});
 
 
 

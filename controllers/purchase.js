@@ -16,7 +16,7 @@ let addPurchase = (req, res) => {
        }
 
        //Redirect to the purchases page
-       res.redirect('/');
+       res.redirect('/purchase');
     });
 };
 

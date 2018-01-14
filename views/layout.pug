@@ -3,11 +3,10 @@ html
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/layout.css')
+        link(rel='stylesheet', href='/stylesheets/dialog.css')
+        link(rel='stylesheet', href='/stylesheets/form.css')
         if title.toString() === 'Productos'
             link(rel='stylesheet', href='/stylesheets/product.css')
-            link(rel='stylesheet', href='/stylesheets/add-product.css')
-        if title.toString() === 'Agregar Productos'
-            link(rel='stylesheet', href='/stylesheets/add-product.css')
         if title.toString() === 'Compras'
             link(rel='stylesheet', href='/stylesheets/content-main.css')
             link(rel='stylesheet', href='/stylesheets/purchase.css')

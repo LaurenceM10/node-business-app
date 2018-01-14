@@ -1,0 +1,124 @@
+/********************
+* Styles for dialog *
+********************/
+
+.dialog {
+    display: none;
+}
+
+.dialog--visible {
+    display: block;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    width: 100%;
+    height: 100%;
+    z-index: 25;
+    background: rgba(100, 100, 100, .4);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Styles for Delete Product Dialog and Edit Product Dialog */
+.dialog__delete, .dialog__edit, .dialog__add-purchase {
+    width: 30%;
+    height: 25vh;
+    background: #ffffff;
+    border-radius: 3px;
+    box-shadow: 5px 5px 45px #555555;
+    padding: 1.5em;
+}
+
+/* To make a sticky dialog */
+.dialog__delete {
+    position: sticky;
+    top: 35%;
+    left: 35%;
+}
+
+
+.dialog__edit {
+    width: 70%;
+    height: 80vh;
+
+    /* To make a sticky dialog */
+    position: sticky;
+    top: 10%;
+    left: 15%;
+}
+
+.dialog__add-purchase {
+    width: 50%;
+    height: 40vh;
+
+    /* To make a sticky dialog */
+    position: sticky;
+    top: 30%;
+    left: 25%;
+}
+
+.dialog__delete .dialog-group, .dialog__edit .dialog-group {
+    display: flex;
+    color: #777777;
+}
+
+.dialog__delete .dialog-group:first-child, .dialog__edit .dialog-group:first-child {
+    width: 100%;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog__edit .dialog-group:first-child {
+    height: 85%;
+}
+
+.dialog__delete .dialog-group:last-child, .dialog__edit .dialog-group:last-child{
+    width: 100%;
+    height: 30%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.dialog__edit .dialog-group:last-child{
+    height: 15%;
+}
+
+
+.dialog-link {
+    text-decoration: none;
+    padding: .5em .8em;
+    border-radius: 2px;
+    margin: 0 .2em;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all .25s;
+}
+
+.dialog-link--delete {
+    color: #ff0000;
+    background: rgba(255, 0, 0, .07);
+}
+
+.dialog-link--delete:hover {
+    border: 1px solid rgba(255, 0, 0, .2);
+}
+
+.dialog-link--edit, .dialog-link--save-changes {
+    color: #03A9F4;
+    background: rgba(3, 169, 244, .07);
+}
+
+.dialog-link--edit:hover, .dialog-link--save-changes:hover {
+    border: 1px solid rgba(3, 169, 244, .2);
+}
+
+
+.dialog-link--cancel {
+    color: #333333;
+    background: rgba(51, 51, 51, .07);
+}
+
+.dialog-link--cancel:hover {
+    border: 1px solid rgba(51, 51, 51, .2);
+}
