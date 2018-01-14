@@ -13,6 +13,7 @@ let iconMenu = document.querySelector('#icon-menu'),
     editForm = document.querySelector('#form-edit'),
     orderPurchase = document.querySelectorAll('.order-purchase'),
     addPurchase = document.querySelector("#add-purchase"),
+    addPurchaseButton = document.querySelector("#dialog-link--save-changes"),
     addPurchaseForm = document.querySelector('#add-purchase-dialog');
 
 /**
@@ -68,17 +69,17 @@ let showProductDialog = () => {
         });
     }
 
-
-    addPurchase.addEventListener('click', () => {
-        event.preventDefault();
-        dialog[2].classList.toggle('dialog--visible');
-
-        closeDialog(2);
-    });
+    if(addPurchase !== null){
+        addPurchase.addEventListener('click', () => {
+            dialog[2].classList.toggle('dialog--visible');
+            closeDialog(2);
+        });
+    }
 };
 
 //Call the method
 showProductDialog();
+
 
 /**
  * Close the dialog when the cancel button is clicked or when any part outside the dialog is clicked
@@ -152,7 +153,7 @@ orderPurchaseClicked();
 /**
  * To submit the form when the add purchase button is clicked
  */
-addPurchase.addEventListener('click', (event) => {
+addPurchaseButton.addEventListener('click', (event) => {
     addPurchaseForm.submit();
 });
 
