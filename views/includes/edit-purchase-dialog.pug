@@ -1,7 +1,7 @@
 .dialog#dialog
-    .dialog__add-purchase#add-purchase-dialog
+    .dialog__edit#add-purchase-dialog
         .dialog-group
-            form.form#form-add-purchase(method='POST' action='/purchase/add')
+            form.form#form-edit(method='POST' action='/purchase/add')
                 .form__group
                     input.input(type='text' placeholder='Nombre del producto' name='productName' required)
                 .form__group
@@ -19,4 +19,4 @@
         .dialog-group
             .dialog-options
                 span.dialog-link.dialog-link--cancel#dialog-link--cancel Cancelar
-                a.dialog-link.dialog-link--save-changes#dialog-link--save-changes Agregar 
+                a.dialog-link.dialog-link--edit#dialog-link--edit Guardar cambios

@@ -234,7 +234,6 @@
 
     .dialog__delete, .dialog__edit {
         width: 80%;
-        height: 25vh;
         left: 10%;
     }
 }
@@ -250,7 +249,6 @@
 
     .dialog__delete, .dialog__edit {
         width: 70%;
-        height: 25vh;
         left: 15%;
     }
 }
@@ -266,9 +264,9 @@
 
     .dialog__delete, .dialog__edit {
         width: 50%;
-        height: 25vh;
         left: 25%;
     }
+
 }
 
 

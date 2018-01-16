@@ -19,10 +19,10 @@ block main
                 .purchase.product-provider
                     span.text #{purchase.provider}
                 .purchase.product-options
-                    span.icon-edit
-                    span.icon-trash
+                    a.icon-edit(href='/purchase/edit/' + purchase.id)
+                    a.icon-trash(href='/purchase/delete/' + purchase.id)
     include includes/delete-dialog
-    include includes/edit-dialog
+    include includes/edit-purchase-dialog
     include includes/add-purchase-dialog
 
 

@@ -14,10 +14,14 @@ block content
                 .nav__avatar
                 span.nav__username Lauren Montenegro
             ul.menu
-                li.menu__item.icon-home-house-streamline Inicio
-                li.menu__item.icon-caddie-shop-shopping-streamline Ventas
-                li.menu__item.icon-caddie-shopping-streamline Compras
-                li.menu__item.icon-list-bullet Productos
+                li.menu__item.icon-home-house-streamline
+                    a.link-menu(href='/') Inicio
+                li.menu__item.icon-caddie-shop-shopping-streamline
+                    a.link-menu(href='/') Ventas
+                li.menu__item.icon-caddie-shopping-streamline
+                    a.link-menu(href='/purchase') Compras
+                li.menu__item.icon-list-bullet
+                    a.link-menu(href='/product') Productos
         main.content-main#content-main
             block main
 

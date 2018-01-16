@@ -38,49 +38,53 @@
 
 
 .dialog__edit {
-    width: 70%;
-    height: 80vh;
+    height: 60vh;
 
     /* To make a sticky dialog */
     position: sticky;
-    top: 10%;
-    left: 15%;
+    top: 20%;
+    left: 35%;
 }
 
 .dialog__add-purchase {
-    width: 50%;
-    height: 40vh;
+    height: 60vh;
 
     /* To make a sticky dialog */
     position: sticky;
-    top: 30%;
-    left: 25%;
+    top: 20%;
+    left: 35%;
 }
 
-.dialog__delete .dialog-group, .dialog__edit .dialog-group {
+.dialog__delete .dialog-group,
+.dialog__edit .dialog-group,
+.dialog__add-purchase .dialog-group {
     display: flex;
     color: #777777;
 }
 
-.dialog__delete .dialog-group:first-child, .dialog__edit .dialog-group:first-child {
+.dialog__delete .dialog-group:first-child,
+.dialog__edit .dialog-group:first-child,
+.dialog__add-purchase .dialog-group:first-child {
     width: 100%;
     height: 70%;
     justify-content: center;
     align-items: center;
 }
 
-.dialog__edit .dialog-group:first-child {
+.dialog__edit .dialog-group:first-child, .dialog__add-purchase .dialog-group:first-child {
     height: 85%;
 }
 
-.dialog__delete .dialog-group:last-child, .dialog__edit .dialog-group:last-child{
+.dialog__delete .dialog-group:last-child,
+.dialog__edit .dialog-group:last-child,
+.dialog__add-purchase .dialog-group:last-child {
     width: 100%;
     height: 30%;
     justify-content: flex-end;
     align-items: flex-end;
 }
 
-.dialog__edit .dialog-group:last-child{
+.dialog__edit .dialog-group:last-child, .dialog__add-purchase .dialog-group:last-child{
     height: 15%;
 }
 

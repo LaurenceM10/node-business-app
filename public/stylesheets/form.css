@@ -5,7 +5,7 @@
 @media (min-width: 280px) {
     .form {
         width: 93.5%;
-        height: 70%;
+        height: 100%;
         margin: auto;
         background: #ffffff;
         border: 1px solid #dddddd;
@@ -79,11 +79,12 @@
 
 @media (min-width: 840px) {
     .form {
-        width: 65%;
+        width: 98%;
+        height: 100%;
     }
 
     .form__group {
-        height: 20%;
+        height: 90%;
         justify-content: space-between;
     }
 

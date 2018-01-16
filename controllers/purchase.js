@@ -86,7 +86,7 @@ let updatePurchase = (req, res) => {
         }
 
         //Redirect to the purchases page
-        res.redirect('/');
+        res.redirect('/purchase');
     });
 };
 
@@ -102,13 +102,13 @@ let deletePurchase = (req, res) => {
     let id = req.params.id;
 
     //Find by request id and delete the purchase
-    Purchase.findByIdAndDelete(id, (error, purchase) => {
+    Purchase.findByIdAndRemove(id, (error, purchase) => {
         if (error || !purchase) {
             res.send({message: 'Error to get the purchase'});
         }
 
         //Redirect to the purchases page
-        res.redirect('/');
+        res.redirect('/purchase');
     });
 };
 

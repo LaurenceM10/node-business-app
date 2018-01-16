@@ -1,5 +1,7 @@
 //Get reference of the HTML elements
-let iconMenu = document.querySelector('#icon-menu'),
+let itemMenu = document.querySelectorAll('.menu__item'),
+    linkMenu = document.querySelectorAll('.link-menu'),
+    iconMenu = document.querySelector('#icon-menu'),
     navigation = document.querySelector('#nav'),
     headerSearch = document.querySelector('#header__search'),
     contentMain = document.querySelector('#content-main'),
@@ -64,17 +66,20 @@ let showProductDialog = () => {
 
             //Pass the route with id of the element clicked
             passEditLink(editIcon[i].getAttribute('href'));
+            console.log(editIcon[i].getAttribute('href'));
 
             closeDialog(1);
         });
     }
 
-    if(addPurchase !== null){
+    if (addPurchase !== null) {
         addPurchase.addEventListener('click', () => {
             dialog[2].classList.toggle('dialog--visible');
             closeDialog(2);
         });
     }
+
+
 };
 
 //Call the method
@@ -137,7 +142,7 @@ editDialogButton.addEventListener('click', (event) => {
 * */
 let orderPurchaseClicked = () => {
     console.log("----- Debug -----");
-    for(let i = 0; i < orderPurchase.length; i++){
+    for (let i = 0; i < orderPurchase.length; i++) {
         orderPurchase[i].addEventListener('click', (event) => {
             if (!event.target.classList[3].toLowerCase() === 'list-order-clicked') {
                 orderPurchase[i].classList.toggle('list-order-clicked');
@@ -158,6 +163,18 @@ addPurchaseButton.addEventListener('click', (event) => {
 });
 
 
+/**
+ * Highlight current item in the navigation menu
+ */
+// let highlightCurrentItem = () => {
+//     for (let i = 0; itemMenu.length; i++){
+//         linkMenu[i].addEventListener('click', (event) => {
+//             if()
+//         });
+//     }
+// };
+//
+// highlightCurrentItem();
 
 
 
